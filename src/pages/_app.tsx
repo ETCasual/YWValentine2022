@@ -10,6 +10,7 @@ import { FirebaseAppProvider } from 'reactfire';
 import { firebaseConfig } from '../config/constants';
 import '@fontsource/zcool-xiaowei';
 import '@fontsource/noto-sans-sc';
+import '../styles/love.css';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
