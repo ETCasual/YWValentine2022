@@ -14,10 +14,17 @@
     "@chakra-ui/theme-tools": "1.1.2",
     "@emotion/react": "11.1.5",
     "@emotion/styled": "11.1.5",
-    "framer-motion": "^4.0.3",
+    "@fontsource/noto-sans-sc": "^4.5.3",
+    "@fontsource/zcool-xiaowei": "^4.5.2",
+    "firebase": "^9.6.6",
+    "framer-motion": "^6.2.4",
     "next": "latest",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1",
+    "react-use": "^17.3.2",
+    "reactfire": "^4.2.1",
+    "zustand": "^3.6.9"
   },
   "devDependencies": {
     "@types/node": "^14.6.0",
@@ -28,15 +35,15 @@
     "autoprefixer": "^10.3.1",
     "eslint": "7.32.0",
     "eslint-config-airbnb": "^18.2.1",
-    "eslint-import-resolver-typescript": "^2.4.0",
-    "eslint-plugin-unused-imports": "^2.0",
-    "eslint-plugin-import": "^2.23.4",
     "eslint-config-next": "11.0.1",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-unused-imports": "^2.0",
     "lint-staged": "^11.1.1",
     "typescript": "4.3.2"
   }

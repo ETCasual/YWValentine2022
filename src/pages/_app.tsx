@@ -1,14 +1,24 @@
-import { ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider } from '@chakra-ui/react';
 
-import theme from '../theme'
-import { AppProps } from 'next/app'
+import theme from '../theme';
+import { AppProps } from 'next/app';
+import { DatabaseProvider, FirestoreProvider, useFirebaseApp } from 'reactfire';
+import { getFirestore } from 'firebase/firestore';
+import { getDatabase } from 'firebase/database';
 
-function MyApp({ Component, pageProps }: AppProps) {
+import { FirebaseAppProvider } from 'reactfire';
+import { firebaseConfig } from '../config/constants';
+import '@fontsource/zcool-xiaowei';
+import '@fontsource/noto-sans-sc';
+
+const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
-    <ChakraProvider resetCSS theme={theme}>
-      <Component {...pageProps} />
-    </ChakraProvider>
-  )
-}
+    <FirebaseAppProvider firebaseConfig={firebaseConfig}>
+      <ChakraProvider resetCSS theme={theme}>
+        <Component {...pageProps} />
+      </ChakraProvider>
+    </FirebaseAppProvider>
+  );
+};
 
-export default MyApp
+export default MyApp;
