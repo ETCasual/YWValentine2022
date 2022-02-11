@@ -129,30 +129,6 @@ export const AdminPanel: React.FC = () => {
       >
         {answers[8]}
       </Button>
-      <Button
-        fontSize="xl"
-        width={'100%'}
-        onClick={() => {
-          set(gameRef, {
-            ...data,
-            9: true,
-          });
-        }}
-      >
-        {answers[9]}
-      </Button>
-      <Button
-        fontSize="xl"
-        width={'100%'}
-        onClick={() => {
-          set(gameRef, {
-            ...data,
-            10: true,
-          });
-        }}
-      >
-        {answers[10]}
-      </Button>
     </SimpleGrid>
   );
 };
