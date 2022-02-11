@@ -16,11 +16,11 @@ export const GameScreen = () => {
 
   return status === 'success' ? (
     <Container height="100vh" overflow="hidden">
-      <Center zIndex={'10'} paddingY="40px">
-        <Text fontSize="6vw" paddingTop="30px" fontFamily={'zcool'}>
+      <Center zIndex={'10'} paddingTop="50px">
+        <Text fontSize="4vw" fontFamily={'zcool'}>
           美貌与智慧
         </Text>
-        <Text fontSize="6vw" fontFamily={'zcool'} color="#FF69B4">
+        <Text fontSize="4vw" fontFamily={'zcool'} color="#FF69B4">
           你会怎样选?
         </Text>
       </Center>
