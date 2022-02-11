@@ -1,4 +1,4 @@
-import { Box, Center, ScaleFade } from '@chakra-ui/react';
+import { Box, Center, Flex, ScaleFade } from '@chakra-ui/react';
 
 export const GridBox = ({ data, answers, d }) => {
   return (
@@ -18,7 +18,26 @@ export const GridBox = ({ data, answers, d }) => {
             {d}
           </Box>
         ) : null}
-        <ScaleFade in={data[d]}>{data[d] ? answers[d] : null}</ScaleFade>
+        <ScaleFade in={data[d]}>
+          {data[d] ? (
+            <Flex flex="row" justifyContent={'center'} alignItems="center">
+              {answers[d]}
+              <Box
+                display="flex"
+                flex="row"
+                justifyContent={'center'}
+                alignItems="center"
+                rounded="full"
+                bg="#cf90f7"
+                textColor={'blue'}
+                marginLeft="50px"
+                paddingX="15px"
+              >
+                {9 - d} PTS
+              </Box>
+            </Flex>
+          ) : null}
+        </ScaleFade>
       </Center>
     </Center>
   );

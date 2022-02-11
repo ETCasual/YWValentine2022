@@ -24,9 +24,9 @@ export const GameScreen = () => {
           你会怎样选?
         </Text>
       </Center>
-      <SimpleGrid zIndex={'10'} columns={2} spacing={10}>
+      <SimpleGrid zIndex={'10'} columns={2} spacingY={8} spacingX={10}>
         {Object.keys(data).map((d) =>
-          d !== 'NO_ID_FIELD' ? <GridBox answers={answers} data={data} d={d} /> : null
+          d !== 'NO_ID_FIELD' ? <GridBox key={d} answers={answers} data={data} d={d} /> : null
         )}
       </SimpleGrid>
       <LoveBackground></LoveBackground>
