@@ -3,7 +3,7 @@ import { Box, Center, ScaleFade } from '@chakra-ui/react';
 export const GridBox = ({ data, answers, d }) => {
   return (
     <Center key={d} w="1000px" h="115px" bg="pink" rounded={'2xl'} shadow="xl">
-      <Center fontSize="55px" fontFamily={'noto'}>
+      <Center fontSize="40px" fontFamily={'noto'}>
         {!data[d] ? (
           <Box
             display="flex"
@@ -13,7 +13,7 @@ export const GridBox = ({ data, answers, d }) => {
             rounded="full"
             bg="blue"
             textColor={'white'}
-            boxSize="90px"
+            boxSize="70px"
           >
             {d}
           </Box>
