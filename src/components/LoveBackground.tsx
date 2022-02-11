@@ -3,7 +3,7 @@ import { useEffectOnce } from 'react-use';
 
 export const LoveBackground: React.FC = ({ children }) => {
   const [imageUrl] = useState<string>('/heartEmoji.png');
-  const [loveDensity] = useState<number>(30);
+  const [loveDensity] = useState<number>(50);
   const [loveLife] = useState<number>(7000);
   const [loves, setLoves] = useState<HTMLDivElement[]>([]);
   const [_loveGeneratorTimer, setLoveGeneratorTimer] = useState<unknown | undefined>();
