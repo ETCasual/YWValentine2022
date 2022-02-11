@@ -128,7 +128,7 @@ export const AdminPanel: React.FC = () => {
         }}
       >
         {answers[8]}
-      </Button>{' '}
+      </Button>
       <Button
         fontSize="xl"
         width={'100%'}
