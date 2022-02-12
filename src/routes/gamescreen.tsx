@@ -16,7 +16,7 @@ export const GameScreen = () => {
 
   return status === 'success' ? (
     <Container height="100vh" overflow="hidden">
-      <Center zIndex={'10'} paddingTop="50px">
+      <Center zIndex={'10'} paddingTop="70px">
         <Text fontSize="4vw" fontFamily={'zcool'}>
           美貌与智慧
         </Text>
