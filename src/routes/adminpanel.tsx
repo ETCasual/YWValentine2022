@@ -26,8 +26,6 @@ export const AdminPanel: React.FC = () => {
             6: false,
             7: false,
             8: false,
-            9: false,
-            10: false,
           });
         }}
       >
