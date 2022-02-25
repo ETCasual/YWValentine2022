@@ -1,4 +1,4 @@
-import { Button, SimpleGrid, Switch, useColorMode } from '@chakra-ui/react';
+import { Button, SimpleGrid, Switch, useColorMode, Text } from '@chakra-ui/react';
 import { ref, set, increment as rtdbIncrement } from 'firebase/database';
 import { useDatabase, useDatabaseObjectData } from 'reactfire';
 import { answers } from '../config/constants';
@@ -15,7 +15,7 @@ export const AdminPanel: React.FC = () => {
     return set(ref(dbRef, `/${index}`), rtdbIncrement(amountToIncrement));
   };
   return (
-    <SimpleGrid column={2} padding={10} spacing={3}>
+    <SimpleGrid flex="col" column={2} padding={10} spacing={3}>
       <Switch onChange={toggleColorMode} color="green" />
       <Button
         fontSize="xl"
@@ -44,7 +44,7 @@ export const AdminPanel: React.FC = () => {
           increment(1, 1);
         }}
       >
-        {answers[1].text}
+        <Text noOfLines={2}>{answers[1].text}</Text>
       </Button>
       <Button
         fontSize="xl"
@@ -53,7 +53,7 @@ export const AdminPanel: React.FC = () => {
           increment(1, 2);
         }}
       >
-        {answers[2].text}
+        <Text noOfLines={2}>{answers[2].text}</Text>
       </Button>
       <Button
         fontSize="xl"
@@ -62,7 +62,7 @@ export const AdminPanel: React.FC = () => {
           increment(1, 3);
         }}
       >
-        {answers[3].text}
+        <Text noOfLines={2}>{answers[3].text}</Text>
       </Button>
       <Button
         fontSize="xl"
@@ -71,7 +71,7 @@ export const AdminPanel: React.FC = () => {
           increment(1, 4);
         }}
       >
-        {answers[4].text}
+        <Text noOfLines={2}>{answers[4].text}</Text>
       </Button>
       <Button
         fontSize="xl"
@@ -80,7 +80,7 @@ export const AdminPanel: React.FC = () => {
           increment(1, 5);
         }}
       >
-        {answers[5].text}
+        <Text noOfLines={2}>{answers[5].text}</Text>
       </Button>
       <Button
         fontSize="xl"
@@ -89,7 +89,8 @@ export const AdminPanel: React.FC = () => {
           increment(1, 6);
         }}
       >
-        {answers[6].text}
+        {' '}
+        <Text noOfLines={2}>{answers[6].text}</Text>
       </Button>
       <Button
         fontSize="xl"
@@ -98,7 +99,7 @@ export const AdminPanel: React.FC = () => {
           increment(1, 7);
         }}
       >
-        {answers[7].text}
+        <Text noOfLines={2}>{answers[7].text}</Text>
       </Button>
       <Button
         fontSize="xl"
@@ -107,7 +108,7 @@ export const AdminPanel: React.FC = () => {
           increment(1, 8);
         }}
       >
-        {answers[8].text}
+        <Text noOfLines={2}>{answers[8].text}</Text>
       </Button>
       <Button
         fontSize="xl"
@@ -116,7 +117,7 @@ export const AdminPanel: React.FC = () => {
           increment(1, 9);
         }}
       >
-        {answers[9].text}
+        <Text noOfLines={2}>{answers[9].text}</Text>
       </Button>
       <Button
         fontSize="xl"
@@ -125,7 +126,52 @@ export const AdminPanel: React.FC = () => {
           increment(1, 10);
         }}
       >
-        {answers[10].text}
+        <Text noOfLines={2}>{answers[10].text}</Text>
+      </Button>
+      <Button
+        fontSize="xl"
+        width={'100%'}
+        onClick={() => {
+          increment(1, 11);
+        }}
+      >
+        <Text noOfLines={2}>{answers[11].text}</Text>
+      </Button>
+      <Button
+        fontSize="xl"
+        width={'100%'}
+        onClick={() => {
+          increment(1, 12);
+        }}
+      >
+        <Text noOfLines={2}>{answers[12].text}</Text>
+      </Button>
+      <Button
+        fontSize="xl"
+        width={'100%'}
+        onClick={() => {
+          increment(1, 13);
+        }}
+      >
+        <Text noOfLines={2}>{answers[13].text}</Text>
+      </Button>
+      <Button
+        fontSize="xl"
+        width={'100%'}
+        onClick={() => {
+          increment(1, 14);
+        }}
+      >
+        <Text noOfLines={2}>{answers[14].text}</Text>
+      </Button>
+      <Button
+        fontSize="xl"
+        width={'100%'}
+        onClick={() => {
+          increment(1, 15);
+        }}
+      >
+        <Text noOfLines={2}>{answers[15].text}</Text>
       </Button>
     </SimpleGrid>
   );

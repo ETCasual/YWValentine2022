@@ -16,7 +16,7 @@ export const GameScreen = () => {
   return status === 'success' ? (
     <Container height="100vh" overflow="hidden">
       <Center paddingTop="70px" />
-      <SimpleGrid zIndex={'10'} columns={4} spacingY={8} spacingX={10}>
+      <SimpleGrid zIndex={'10'} columns={5} spacingY={8} spacingX={10}>
         {Object.keys(data).map((d) =>
           d !== 'NO_ID_FIELD' ? <GridBox key={d} answers={answers} data={data} d={d} /> : null
         )}
