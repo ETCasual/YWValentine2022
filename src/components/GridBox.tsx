@@ -2,7 +2,7 @@ import { Box, Center, Flex, ScaleFade } from '@chakra-ui/react';
 
 export const GridBox = ({ data, answers, d }) => {
   return (
-    <Center key={d} w="1000px" h="115px" bg="pink" rounded={'2xl'} shadow="xl">
+    <Center key={d} w="300px" h="200px" bg="pink" rounded={'2xl'} shadow="xl">
       <Center fontSize="40px" fontFamily={'noto'}>
         {!data[d] ? (
           <Box
@@ -19,24 +19,15 @@ export const GridBox = ({ data, answers, d }) => {
           </Box>
         ) : null}
         <ScaleFade in={data[d]}>
-          {data[d] ? (
+          {data[d] == 0 ? null : data[d] == 1 ? (
             <Flex flex="row" justifyContent={'center'} alignItems="center">
-              {answers[d]}
-              <Box
-                display="flex"
-                flex="row"
-                justifyContent={'center'}
-                alignItems="center"
-                rounded="full"
-                bg="#cf90f7"
-                textColor={'blue'}
-                marginLeft="50px"
-                paddingX="15px"
-              >
-                {9 - d} PTS
-              </Box>
+              {answers[d].text}
             </Flex>
-          ) : null}
+          ) : (
+            <Flex flex="row" justifyContent={'center'} alignItems="center">
+              {answers[d].ans}
+            </Flex>
+          )}
         </ScaleFade>
       </Center>
     </Center>

@@ -1,5 +1,5 @@
 import { Button, SimpleGrid, Switch, useColorMode } from '@chakra-ui/react';
-import { ref, set } from 'firebase/database';
+import { ref, set, increment as rtdbIncrement } from 'firebase/database';
 import { useDatabase, useDatabaseObjectData } from 'reactfire';
 import { answers } from '../config/constants';
 
@@ -7,9 +7,13 @@ export const AdminPanel: React.FC = () => {
   const dbRef = useDatabase();
 
   const gameRef = ref(dbRef, '/');
-  const { status, data } = useDatabaseObjectData<Record<string, boolean>>(gameRef);
+  const { status, data } = useDatabaseObjectData<Record<string, number>>(gameRef);
 
   const { colorMode, toggleColorMode } = useColorMode();
+
+  const increment = (amountToIncrement: number, index) => {
+    return set(ref(dbRef, `/${index}`), rtdbIncrement(amountToIncrement));
+  };
   return (
     <SimpleGrid column={2} padding={10} spacing={3}>
       <Switch onChange={toggleColorMode} color="green" />
@@ -18,14 +22,16 @@ export const AdminPanel: React.FC = () => {
         width={'100%'}
         onClick={() => {
           set(gameRef, {
-            1: false,
-            2: false,
-            3: false,
-            4: false,
-            5: false,
-            6: false,
-            7: false,
-            8: false,
+            1: 0,
+            2: 0,
+            3: 0,
+            4: 0,
+            5: 0,
+            6: 0,
+            7: 0,
+            8: 0,
+            9: 0,
+            10: 0,
           });
         }}
       >
@@ -35,97 +41,91 @@ export const AdminPanel: React.FC = () => {
         fontSize="xl"
         width={'100%'}
         onClick={() => {
-          set(gameRef, {
-            ...data,
-            1: true,
-          });
+          increment(1, 1);
         }}
       >
-        {answers[1]}
+        {answers[1].text}
       </Button>
       <Button
         fontSize="xl"
         width={'100%'}
         onClick={() => {
-          set(gameRef, {
-            ...data,
-            2: true,
-          });
+          increment(1, 2);
         }}
       >
-        {answers[2]}
+        {answers[2].text}
       </Button>
       <Button
         fontSize="xl"
         width={'100%'}
         onClick={() => {
-          set(gameRef, {
-            ...data,
-            3: true,
-          });
+          increment(1, 3);
         }}
       >
-        {answers[3]}
+        {answers[3].text}
       </Button>
       <Button
         fontSize="xl"
         width={'100%'}
         onClick={() => {
-          set(gameRef, {
-            ...data,
-            4: true,
-          });
+          increment(1, 4);
         }}
       >
-        {answers[4]}
+        {answers[4].text}
       </Button>
       <Button
         fontSize="xl"
         width={'100%'}
         onClick={() => {
-          set(gameRef, {
-            ...data,
-            5: true,
-          });
+          increment(1, 5);
         }}
       >
-        {answers[5]}
+        {answers[5].text}
       </Button>
       <Button
         fontSize="xl"
         width={'100%'}
         onClick={() => {
-          set(gameRef, {
-            ...data,
-            6: true,
-          });
+          increment(1, 6);
         }}
       >
-        {answers[6]}
+        {answers[6].text}
       </Button>
       <Button
         fontSize="xl"
         width={'100%'}
         onClick={() => {
-          set(gameRef, {
-            ...data,
-            7: true,
-          });
+          increment(1, 7);
         }}
       >
-        {answers[7]}
+        {answers[7].text}
       </Button>
       <Button
         fontSize="xl"
         width={'100%'}
         onClick={() => {
-          set(gameRef, {
-            ...data,
-            8: true,
-          });
+          increment(1, 8);
         }}
       >
-        {answers[8]}
+        {answers[8].text}
+      </Button>
+      <Button
+        fontSize="xl"
+        width={'100%'}
+        onClick={() => {
+          increment(1, 9);
+        }}
+      >
+        {answers[9].text}
+      </Button>
+      <Button
+        fontSize="xl"
+        width={'100%'}
+        onClick={() => {
+          increment(1, 10);
+        }}
+      >
+        {answers[10].text}
       </Button>
     </SimpleGrid>
   );
