@@ -14,7 +14,14 @@ export const GameScreen = () => {
   const { status, data } = useDatabaseObjectData<Record<string, boolean>>(gameRef);
 
   return status === 'success' ? (
-    <Container height="100vh" overflow="scroll" bg="black" paddingY="70px" paddingX="35px">
+    <Container
+      height="100vh"
+      overflowX="scroll"
+      overflowY="hidden"
+      bg="black"
+      paddingY="70px"
+      paddingX="35px"
+    >
       <SimpleGrid zIndex={'10'} columns={4} spacingY={8} spacingX={10}>
         {Object.keys(data).map((d) =>
           d !== 'NO_ID_FIELD' ? <GridBox key={d} answers={answers} data={data} d={d} /> : null
