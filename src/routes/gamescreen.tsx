@@ -16,8 +16,8 @@ export const GameScreen = () => {
   return status === 'success' ? (
     <Container
       height="100vh"
-      overflowX="scroll"
-      overflowY="hidden"
+      overflowY="scroll"
+      overflowX="hidden"
       bg="black"
       paddingY="70px"
       paddingX="35px"
