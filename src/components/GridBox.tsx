@@ -2,7 +2,27 @@ import { Box, Center, Flex, ScaleFade } from '@chakra-ui/react';
 
 export const GridBox = ({ data, answers, d }) => {
   return (
-    <Center key={d} w="400px" h="250px" bg="gold" rounded={'2xl'} shadow="xl">
+    <Center
+      key={d}
+      w="400px"
+      h="300px"
+      rounded={'2xl'}
+      // shadow="xl"
+      // filter="blur-lg"
+      paddingX="8"
+      style={{
+        backgroundColor: `${
+          !data[d] ? 'rgba(255,215,0)' : data[d] == 1 ? 'rgba(10, 186, 181)' : 'rgba(0, 128, 0)'
+        }`,
+        boxShadow: `0px 0px 15px 10px ${
+          !data[d]
+            ? 'rgba(255,215,0,0.5)'
+            : data[d] == 1
+            ? 'rgba(10, 186, 181, 0.5)'
+            : 'rgba(0, 128, 0, 0.5)'
+        }`,
+      }}
+    >
       <Center fontSize="50px" fontFamily={'noto'}>
         {!data[d] ? (
           <Box
@@ -11,9 +31,10 @@ export const GridBox = ({ data, answers, d }) => {
             justifyContent={'center'}
             alignItems="center"
             rounded="full"
-            bg="blue"
-            textColor={'white'}
-            boxSize="70px"
+            bg="white"
+            textColor={'black'}
+            boxSize="100px"
+            padding="4"
             fontWeight="bold"
             textAlign={'center'}
           >
@@ -28,6 +49,7 @@ export const GridBox = ({ data, answers, d }) => {
               alignItems="center"
               fontWeight="bold"
               textAlign={'center'}
+              fontSize={'40px'}
             >
               {answers[d].text}
             </Flex>
@@ -38,6 +60,8 @@ export const GridBox = ({ data, answers, d }) => {
               alignItems="center"
               fontWeight="bold"
               textAlign={'center'}
+              fontSize={'40px'}
+              textColor="white"
             >
               {answers[d].ans}
             </Flex>
